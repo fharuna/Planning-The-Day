@@ -1,0 +1,15 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  /* begin text*/
+
+.jumbotron {
+    text-align: center;
+    background-color: antiquewhite;
+    color: black;
+    border-bottom: 5px solid black;
+}
+
