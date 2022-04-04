@@ -8,21 +8,46 @@ currentDay.text(displayCurrentDay);
 $("#currentDay").text(moment().format("YYYY MMMM Do"));
 
 var currentTime = moment();
-var currentHour = moment().hour();
 var currentMinute = moment().minutes();
 
-var hourBlock = parseInt($(this).attr("id"))
 
-//for time/hours for the time blocks
+// color changing according to time
+function changeColor(){
 
-if (currentHour > hourBlock) {
-    $(".description").addClass("past"); 
-  } 
-  else if (currentHour == hourBlock) {
+    var currentHour=moment().hours() 
+    $(".time-block").each(function(){
+
+var calendarHour=parseInt($(this).attr("id"))
+if (calendarHour < currentHour){
+$(this).addClass("past")
+}
+  else if (calendarHour === currentHour) {
+    $(this).removeClass ("past")
     $(".description").addClass("present");
   } 
   else {
+    $(this).removeClass("present");  
     $(".description").addClass("future");
   }
 
+});
+  
 
+// button functionality to save entered text
+
+$(".saveBtn").on("click", function(){
+    var time=$(this).parent().attr("id")
+    console.log (time)
+    var value =$(this).siblings(".description").val()
+    
+    localStorage.setItem(time, value)
+  })
+  
+$(".btn").each(function() { 
+    for (var i = 0; i < save.length; i++) {
+        if($(this).attr("saveBtn") === save[i].location) {
+            $(this).parent().prev().val(save[i].input);
+        }
+    }
+});
+}

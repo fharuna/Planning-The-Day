@@ -45,3 +45,18 @@ textarea{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
+.past {
+    color: crimson;
+    background-color: darkgray;
+}
+
+.present {
+    color: crimson;
+    background-color: darkseagreen;
+}
+
+.future {
+    color: crimson;
+    background-color: darkturquoise;
+}
